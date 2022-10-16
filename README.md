@@ -1,7 +1,7 @@
 
 # Enable Deno linter
 
-Add following lines to `.vscode/settings.json`
+Add following to `.vscode/settings.json`
 
 ```sh
 {
