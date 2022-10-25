@@ -4,16 +4,7 @@ interface BackendApi {
 
     getWaste: (zipCode: string, date: Date, zone?: string) => Waste;
 
-    getWastes: (zipCode: string, startDate: Date, endDate: Date, zone?: string) => {
-        zipCode: string;
-        date: Date;
-        wastes: {
-            code: string;
-            label: string;
-            details: string[];
-        }[];
-        zone?: string;
-    }[];
+    getWastes: (zipCode: string, startDate: Date, endDate: Date, zone?: string) => Waste[];
 
     getWasteCenters: (zipCode: string) => {
         name: string;
