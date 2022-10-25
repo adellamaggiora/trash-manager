@@ -1,15 +1,14 @@
-import { Router } from "https://deno.land/x/oak/mod.ts";
+import express from "express";
+import { waste } from "../fake-data/waste";
+import responseFns from "../functions/response-fns";
 
-const wasteRoute = new Router();
+const getWaste = (request, response) => {
+  responseFns.sendOkJson(waste)(response);
+};
 
-wasteRoute.get('/', ({response})=> {
-    response.body = 'homepage'
-    response.status = 200;
-})
+const wasteRouter = express.Router();
 
-wasteRoute.get('/trash', ({response})=> {
-    response.body = 'trash'
-    response.status = 200;
-})
+wasteRouter
+  .get("/waste", getWaste);
 
-export default wasteRoute
+export default wasteRouter;

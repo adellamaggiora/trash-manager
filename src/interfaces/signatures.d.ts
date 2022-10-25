@@ -1,15 +1,8 @@
+import { Waste } from "./waste";
+
 interface BackendApi {
 
-    getWaste: (zipCode: string, date: Date, zone?: string) => {
-        zipCode: string;
-        date: Date;
-        wastes: {
-            code: string;
-            label: string;
-            details: string[];
-        }[];
-        zone?: string;
-    };
+    getWaste: (zipCode: string, date: Date, zone?: string) => Waste;
 
     getWastes: (zipCode: string, startDate: Date, endDate: Date, zone?: string) => {
         zipCode: string;
