@@ -1,4 +1,4 @@
-const sendJsonResponse = (statusCode: number) => (json: {}) => (response: any): void => {
+const sendJsonResponse = (statusCode: number) => (response: any) => (json: {}): void => {
     response.status(statusCode).json(json);
 }
 
