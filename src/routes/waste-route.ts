@@ -7,7 +7,6 @@ import { pipe } from "rxjs";
 import { BackendApi } from "../interfaces/signatures";
 
 const getWastes = (req: Request, res: Response) => {
-  const { zipCode, startDate, endDate, zone } = req.query;
   const wasteController = pipe(
     getWastesQuery,
     execQuery,
@@ -16,7 +15,7 @@ const getWastes = (req: Request, res: Response) => {
   pipe(
     wasteController,
     responseFns.sendOkJson(res),
-  )({ zipCode, startDate, endDate, zone });
+  )(req.query);
 };
 
 const wasteRouter = express.Router();
